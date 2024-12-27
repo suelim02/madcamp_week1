@@ -1,4 +1,4 @@
-package com.example.week1.ui
+package com.example.week1
 
 data class Team(
     val name: String,

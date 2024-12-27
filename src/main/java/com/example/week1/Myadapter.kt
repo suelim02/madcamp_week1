@@ -1,11 +1,10 @@
-package com.example.week1.ui
+package com.example.week1
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.week1.R
 
 class Myadapter(private val teamList: List<Team>) : RecyclerView.Adapter<Myadapter.MyViewHolder>() {
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)    {
