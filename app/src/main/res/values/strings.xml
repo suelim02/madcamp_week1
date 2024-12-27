@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="button_open_gallery">갤러리</string>
+    <string name="image_description_placeholder">선택된 이미지</string>
+</resources>
