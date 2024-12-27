@@ -8,7 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication2.databinding.ActivityMainBinding
-
+//시도
 
 class MainActivity : AppCompatActivity() {
 
