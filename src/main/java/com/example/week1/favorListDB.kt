@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.provider.BaseColumns
 
-class allListDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class favorListDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     private val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS ${TABLE_NAME}"
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -35,7 +35,7 @@ class allListDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
         return db.insert(TABLE_NAME, null, values)
     }
 
-    fun getAllTeams(): List<Team> {
+    fun getFavorTeams(): List<Team> {
         val userList = mutableListOf<Team>()
         val db = readableDatabase
         val cursor = db.rawQuery("SELECT DISTINCT * FROM $TABLE_NAME", null)
@@ -55,9 +55,9 @@ class allListDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
 
     companion object {
         // If you change the database schema, you must increment the database version.
-        const val DATABASE_VERSION = 2
+        const val DATABASE_VERSION = 1
         const val DATABASE_NAME = "FeedReader.db"
-        const val TABLE_NAME = "allTeam"
+        const val TABLE_NAME = "entry"
         const val TEAM = "team"
         const val STADIUM = "stadium"
     }

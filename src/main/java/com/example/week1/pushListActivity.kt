@@ -40,7 +40,7 @@ class pushListActivity : AppCompatActivity() {
         val teamList = dbHelper.getAllTeams()
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = Myadapter(teamList)  { selectedData ->
+        recyclerView.adapter = Myadapter_addpage(teamList)  { selectedData ->
             val resultIntent = Intent().apply {
                 putExtra("selected_data", arrayListOf(selectedData))
             }
