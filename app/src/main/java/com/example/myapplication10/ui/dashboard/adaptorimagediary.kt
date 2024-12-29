@@ -8,8 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication10.R
 
-class ImageListAdapter(private val imageList: List<ImageDiary>) :
-    RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
+class ImageListAdapter(
+    private val imageList: List<ImageDiary>,
+    private val onItemClick: (ImageDiary, Int) -> Unit // 클릭 이벤트 콜백 추가
+) : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
 
     class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.item_image)
@@ -26,6 +28,11 @@ class ImageListAdapter(private val imageList: List<ImageDiary>) :
         val imageDiary = imageList[position]
         holder.imageView.setImageURI(imageDiary.imageUri)
         holder.textView.text = imageDiary.description
+
+        // 아이템 클릭 이벤트 설정
+        holder.itemView.setOnClickListener {
+            onItemClick(imageDiary, position) // 클릭 시 콜백 호출
+        }
     }
 
     override fun getItemCount(): Int = imageList.size

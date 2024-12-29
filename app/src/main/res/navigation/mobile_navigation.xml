@@ -47,5 +47,10 @@
                 app:argType="integer" /> <!-- app:nullable 속성 제거 -->
         </action>
     </fragment>
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.myapplication10.ui.notifications.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
 
 </navigation>

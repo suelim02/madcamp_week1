@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication10.databinding.ActivityMainBinding
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,6 +30,15 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
             )
         )
+        navView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_notifications -> {
+                    Log.d("Navigation", "Notifications selected")
+                    true
+                }
+                else -> false
+            }
+        }
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
